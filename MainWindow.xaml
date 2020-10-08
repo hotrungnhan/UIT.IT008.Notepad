@@ -1,0 +1,28 @@
+﻿<Window x:Class="Nodepad__fake.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nodepad__fake"
+        mc:Ignorable="d"
+        Title="Notepad++" Height="450" Width="800">
+    <Grid>
+        <ToolBarPanel >
+            <ToolBar  ToolBarTray.IsLocked="True" >
+                <Menu ToolBar.OverflowMode="Never">
+                    <MenuItem Header="File" />
+                    <MenuItem Header="Edit" />
+                    <MenuItem Header="View" />
+                    <MenuItem Header="Tool" />
+                    <MenuItem Header="Language"/>
+                    <MenuItem Header="About"/>
+                </Menu>
+            </ToolBar>
+        </ToolBarPanel>
+        <TabControl Margin="0 {} 0 0">
+            <TabItem Header="New Draft">
+                <RichTextBox></RichTextBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
