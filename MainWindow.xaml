@@ -7,20 +7,25 @@
         mc:Ignorable="d"
         Title="Notepad++" Height="450" Width="800">
     <Grid>
-        <ToolBarPanel >
-            <ToolBar  ToolBarTray.IsLocked="True" >
-                <Menu ToolBar.OverflowMode="Never">
-                    <MenuItem Header="File" />
-                    <MenuItem Header="Edit" />
-                    <MenuItem Header="View" />
-                    <MenuItem Header="Tool" />
-                    <MenuItem Header="Language"/>
-                    <MenuItem Header="About"/>
-                </Menu>
-            </ToolBar>
-        </ToolBarPanel>
-        <TabControl Margin="0 {} 0 0">
+        <DockPanel>
+            <ToolBarPanel>
+                <ToolBar  ToolBarTray.IsLocked="True"  DockPanel.Dock="Top" >
+                    <Menu ToolBar.OverflowMode="Never">
+                        <MenuItem Header="File" />
+                        <MenuItem Header="Edit" />
+                        <MenuItem Header="View" />
+                        <MenuItem Header="Tool" />
+                        <MenuItem Header="Language"/>
+                        <MenuItem Header="About"/>
+                    </Menu>
+                </ToolBar>
+            </ToolBarPanel>
+        </DockPanel>
+        <TabControl Margin="0 30 0 0">
             <TabItem Header="New Draft">
+                <RichTextBox></RichTextBox>
+            </TabItem>
+            <TabItem Header="New Draft(1)">
                 <RichTextBox></RichTextBox>
             </TabItem>
         </TabControl>
