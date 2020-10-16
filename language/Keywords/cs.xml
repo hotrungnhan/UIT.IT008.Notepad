@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="Windows-1252" ?>
 <NotepadPlus>
 	<AutoComplete language="C#">
+	<FileExtension >
+		<value>cs</value>	
+	</FileExtension>
 		<Environment ignoreCase="no" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" additionalWordChar="."/>
 		<KeyWord name="abstract" />
 		<KeyWord name="as" />
