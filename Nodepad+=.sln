@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodepad++fake", "Nodepad++fake.csproj", "{02ECC8CD-7A3A-4907-B1FF-C7EA48566DF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodepad+=", "Nodepad+=.csproj", "{01A355CD-3E52-4AE0-8B92-4C5EB20F2D98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{02ECC8CD-7A3A-4907-B1FF-C7EA48566DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02ECC8CD-7A3A-4907-B1FF-C7EA48566DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02ECC8CD-7A3A-4907-B1FF-C7EA48566DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02ECC8CD-7A3A-4907-B1FF-C7EA48566DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A355CD-3E52-4AE0-8B92-4C5EB20F2D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A355CD-3E52-4AE0-8B92-4C5EB20F2D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A355CD-3E52-4AE0-8B92-4C5EB20F2D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A355CD-3E52-4AE0-8B92-4C5EB20F2D98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {764D5022-BC9F-4215-8809-CA1046A6994A}
+		SolutionGuid = {B8D6C5D7-55AF-4E7D-B175-80E1EC9B8561}
 	EndGlobalSection
 EndGlobal

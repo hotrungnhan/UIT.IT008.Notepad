@@ -22,6 +22,11 @@
 		following Param tag specifies a parameter, they must be in order. The name attributes specifies
 		the parameter name.
 		-->
+		<FileExtension >
+			<value>cpp</value>
+			<value>c++</value>
+			<value>c++</value>	
+		</FileExtension>
 		<KeyWord name="#define" />
 		<KeyWord name="#elif" />
 		<KeyWord name="#else" />
