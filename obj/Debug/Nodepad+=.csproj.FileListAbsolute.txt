@@ -20,3 +20,15 @@ C:\Users\DinhHuynhThaiBinh\Source\Repos\NodePad-Rebuilt2\obj\Debug\Nodepad+=.csp
 C:\Users\DinhHuynhThaiBinh\Source\Repos\NodePad-Rebuilt2\obj\Debug\Nodepad+=.csproj.CoreCompileInputs.cache
 C:\Users\DinhHuynhThaiBinh\Source\Repos\NodePad-Rebuilt2\obj\Debug\nodepadC++.exe
 C:\Users\DinhHuynhThaiBinh\Source\Repos\NodePad-Rebuilt2\obj\Debug\nodepadC++.pdb
+D:\DoAnLapTrinhTrucQuan\bin\Debug\nodepadC++.exe.config
+D:\DoAnLapTrinhTrucQuan\bin\Debug\nodepadC++.exe
+D:\DoAnLapTrinhTrucQuan\bin\Debug\nodepadC++.pdb
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad+=.csprojAssemblyReference.cache
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.component.TextBox.resources
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.Form1.resources
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.Properties.Resources.resources
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad+=.csproj.GenerateResource.cache
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad+=.csproj.CoreCompileInputs.cache
+D:\DoAnLapTrinhTrucQuan\obj\Debug\nodepadC++.exe
+D:\DoAnLapTrinhTrucQuan\obj\Debug\nodepadC++.pdb
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.Re.resources

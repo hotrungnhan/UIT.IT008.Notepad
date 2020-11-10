@@ -68,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox mainbox;
+        public System.Windows.Forms.RichTextBox mainbox;
         private System.Windows.Forms.RichTextBox linebox;
     }
 }
