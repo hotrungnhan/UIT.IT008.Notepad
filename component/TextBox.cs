@@ -153,7 +153,8 @@ namespace Nodepad.component
         }
         public void Paste()
         {
-            this.mainbox.AppendText(Clipboard.GetText(TextDataFormat.UnicodeText));
+            //this.mainbox.AppendText(Clipboard.GetText(TextDataFormat.UnicodeText));
+            this.mainbox.Paste();
         }
 
     }
