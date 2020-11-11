@@ -32,3 +32,4 @@ D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad+=.csproj.CoreCompileInputs.cache
 D:\DoAnLapTrinhTrucQuan\obj\Debug\nodepadC++.exe
 D:\DoAnLapTrinhTrucQuan\obj\Debug\nodepadC++.pdb
 D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.Re.resources
+D:\DoAnLapTrinhTrucQuan\obj\Debug\Nodepad.Find.resources

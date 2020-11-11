@@ -36,9 +36,18 @@ namespace Nodepad
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.Open_ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Save_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Coppy_ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Cut_ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Print_ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Close_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CloseAll_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Paste_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Undo_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Redo_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Find_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Replace_ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.New_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Open_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +74,8 @@ namespace Nodepad
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleFullScreenModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.vewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,23 +85,12 @@ namespace Nodepad
             this.javaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.findToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReplaceToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.countWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new Nodepad.component.codeTab();
             this.textBox1 = new Nodepad.component.TextBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.CloseAll_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Paste_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Undo_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Redo_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Find_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Replace_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Coppy_ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.vewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -158,6 +158,16 @@ namespace Nodepad
             this.Save_ToolStripButton.Text = "toolStripButton3";
             this.Save_ToolStripButton.Click += new System.EventHandler(this.Save_Click);
             // 
+            // Coppy_ToolStripButton
+            // 
+            this.Coppy_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Coppy_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Coppy_ToolStripButton.Image")));
+            this.Coppy_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Coppy_ToolStripButton.Name = "Coppy_ToolStripButton";
+            this.Coppy_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Coppy_ToolStripButton.Text = "toolStripButton1";
+            this.Coppy_ToolStripButton.Click += new System.EventHandler(this.Coppy_Click);
+            // 
             // Cut_ToolStripButton
             // 
             this.Cut_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -187,6 +197,83 @@ namespace Nodepad
             this.Close_ToolStripButton.Size = new System.Drawing.Size(34, 24);
             this.Close_ToolStripButton.Text = "toolStripButton6";
             this.Close_ToolStripButton.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // CloseAll_ToolStripButton
+            // 
+            this.CloseAll_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CloseAll_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseAll_ToolStripButton.Image")));
+            this.CloseAll_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CloseAll_ToolStripButton.Name = "CloseAll_ToolStripButton";
+            this.CloseAll_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.CloseAll_ToolStripButton.Text = "toolStripButton7";
+            this.CloseAll_ToolStripButton.Click += new System.EventHandler(this.CloseAll_Click);
+            // 
+            // Paste_ToolStripButton
+            // 
+            this.Paste_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Paste_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Paste_ToolStripButton.Image")));
+            this.Paste_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Paste_ToolStripButton.Name = "Paste_ToolStripButton";
+            this.Paste_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Paste_ToolStripButton.Text = "toolStripButton8";
+            this.Paste_ToolStripButton.Click += new System.EventHandler(this.Paste_Click_1);
+            // 
+            // Undo_ToolStripButton
+            // 
+            this.Undo_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Undo_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Undo_ToolStripButton.Image")));
+            this.Undo_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Undo_ToolStripButton.Name = "Undo_ToolStripButton";
+            this.Undo_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Undo_ToolStripButton.Text = "toolStripButton9";
+            this.Undo_ToolStripButton.Click += new System.EventHandler(this.Undo_Click);
+            // 
+            // Redo_ToolStripButton
+            // 
+            this.Redo_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Redo_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Redo_ToolStripButton.Image")));
+            this.Redo_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Redo_ToolStripButton.Name = "Redo_ToolStripButton";
+            this.Redo_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Redo_ToolStripButton.Text = "toolStripButton10";
+            // 
+            // Find_ToolStripButton
+            // 
+            this.Find_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Find_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Find_ToolStripButton.Image")));
+            this.Find_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Find_ToolStripButton.Name = "Find_ToolStripButton";
+            this.Find_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Find_ToolStripButton.Text = "toolStripButton11";
+            this.Find_ToolStripButton.Click += new System.EventHandler(this.Find_Click);
+            // 
+            // Replace_ToolStripButton
+            // 
+            this.Replace_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Replace_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Replace_ToolStripButton.Image")));
+            this.Replace_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Replace_ToolStripButton.Name = "Replace_ToolStripButton";
+            this.Replace_ToolStripButton.Size = new System.Drawing.Size(34, 24);
+            this.Replace_ToolStripButton.Text = "toolStripButton12";
+            this.Replace_ToolStripButton.Click += new System.EventHandler(this.Replace_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 24);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // fileToolStripMenuItem
             // 
@@ -314,7 +401,7 @@ namespace Nodepad
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -322,7 +409,7 @@ namespace Nodepad
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -330,7 +417,7 @@ namespace Nodepad
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -338,7 +425,7 @@ namespace Nodepad
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.Copy_click);
             // 
@@ -346,7 +433,7 @@ namespace Nodepad
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.Paste_click);
             // 
@@ -354,14 +441,14 @@ namespace Nodepad
             // 
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
             this.selectToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.selectToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.selectToolStripMenuItem.Text = "Select All";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -395,6 +482,17 @@ namespace Nodepad
             this.postitToolStripMenuItem.Size = new System.Drawing.Size(308, 34);
             this.postitToolStripMenuItem.Text = "Post-It";
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(305, 6);
+            // 
+            // vewToolStripMenuItem
+            // 
+            this.vewToolStripMenuItem.Name = "vewToolStripMenuItem";
+            this.vewToolStripMenuItem.Size = new System.Drawing.Size(308, 34);
+            this.vewToolStripMenuItem.Text = "Zoom";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -427,7 +525,7 @@ namespace Nodepad
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.cToolStripMenuItem.Tag = ".cs";
             this.cToolStripMenuItem.Text = "C#";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.SubMenu_Click);
@@ -437,7 +535,7 @@ namespace Nodepad
             this.plainTextToolStripMenuItem.Checked = true;
             this.plainTextToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.plainTextToolStripMenuItem.Name = "plainTextToolStripMenuItem";
-            this.plainTextToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.plainTextToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.plainTextToolStripMenuItem.Tag = ".txt";
             this.plainTextToolStripMenuItem.Text = "Plain Text";
             this.plainTextToolStripMenuItem.Click += new System.EventHandler(this.SubMenu_Click);
@@ -445,7 +543,7 @@ namespace Nodepad
             // cToolStripMenuItem1
             // 
             this.cToolStripMenuItem1.Name = "cToolStripMenuItem1";
-            this.cToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.cToolStripMenuItem1.Size = new System.Drawing.Size(192, 34);
             this.cToolStripMenuItem1.Tag = ".cpp";
             this.cToolStripMenuItem1.Text = "C++";
             this.cToolStripMenuItem1.Click += new System.EventHandler(this.SubMenu_Click);
@@ -453,7 +551,7 @@ namespace Nodepad
             // javaScriptToolStripMenuItem
             // 
             this.javaScriptToolStripMenuItem.Name = "javaScriptToolStripMenuItem";
-            this.javaScriptToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.javaScriptToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.javaScriptToolStripMenuItem.Tag = ".js";
             this.javaScriptToolStripMenuItem.Text = "JavaScript";
             this.javaScriptToolStripMenuItem.Click += new System.EventHandler(this.SubMenu_Click);
@@ -461,7 +559,7 @@ namespace Nodepad
             // javaToolStripMenuItem
             // 
             this.javaToolStripMenuItem.Name = "javaToolStripMenuItem";
-            this.javaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.javaToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.javaToolStripMenuItem.Tag = ".jav";
             this.javaToolStripMenuItem.Text = "Java";
             this.javaToolStripMenuItem.Click += new System.EventHandler(this.SubMenu_Click);
@@ -470,7 +568,7 @@ namespace Nodepad
             // 
             this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.findToolStripMenuItem1,
-            this.findToolStripMenuItem2});
+            this.ReplaceToolStripMenuItem2});
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
             this.searchToolStripMenuItem.Text = "Search";
@@ -481,13 +579,15 @@ namespace Nodepad
             this.findToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.findToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
             this.findToolStripMenuItem1.Text = "Find...";
+            this.findToolStripMenuItem1.Click += new System.EventHandler(this.findToolStripMenuItem1_Click);
             // 
-            // findToolStripMenuItem2
+            // ReplaceToolStripMenuItem2
             // 
-            this.findToolStripMenuItem2.Name = "findToolStripMenuItem2";
-            this.findToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.findToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
-            this.findToolStripMenuItem2.Text = "Replace";
+            this.ReplaceToolStripMenuItem2.Name = "ReplaceToolStripMenuItem2";
+            this.ReplaceToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.ReplaceToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.ReplaceToolStripMenuItem2.Text = "Replace";
+            this.ReplaceToolStripMenuItem2.Click += new System.EventHandler(this.findToolStripMenuItem2_Click);
             // 
             // countWordToolStripMenuItem
             // 
@@ -541,104 +641,6 @@ namespace Nodepad
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip2.Size = new System.Drawing.Size(1192, 24);
             this.menuStrip2.TabIndex = 1;
-            // 
-            // CloseAll_ToolStripButton
-            // 
-            this.CloseAll_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CloseAll_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseAll_ToolStripButton.Image")));
-            this.CloseAll_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CloseAll_ToolStripButton.Name = "CloseAll_ToolStripButton";
-            this.CloseAll_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.CloseAll_ToolStripButton.Text = "toolStripButton7";
-            this.CloseAll_ToolStripButton.Click += new System.EventHandler(this.CloseAll_Click);
-            // 
-            // Paste_ToolStripButton
-            // 
-            this.Paste_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Paste_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Paste_ToolStripButton.Image")));
-            this.Paste_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Paste_ToolStripButton.Name = "Paste_ToolStripButton";
-            this.Paste_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Paste_ToolStripButton.Text = "toolStripButton8";
-            this.Paste_ToolStripButton.Click += new System.EventHandler(this.Paste_Click_1);
-            // 
-            // Undo_ToolStripButton
-            // 
-            this.Undo_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Undo_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Undo_ToolStripButton.Image")));
-            this.Undo_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Undo_ToolStripButton.Name = "Undo_ToolStripButton";
-            this.Undo_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Undo_ToolStripButton.Text = "toolStripButton9";
-            this.Undo_ToolStripButton.Click += new System.EventHandler(this.Undo_Click);
-            // 
-            // Redo_ToolStripButton
-            // 
-            this.Redo_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Redo_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Redo_ToolStripButton.Image")));
-            this.Redo_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Redo_ToolStripButton.Name = "Redo_ToolStripButton";
-            this.Redo_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Redo_ToolStripButton.Text = "toolStripButton10";
-            // 
-            // Find_ToolStripButton
-            // 
-            this.Find_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Find_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Find_ToolStripButton.Image")));
-            this.Find_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Find_ToolStripButton.Name = "Find_ToolStripButton";
-            this.Find_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Find_ToolStripButton.Text = "toolStripButton11";
-            this.Find_ToolStripButton.Click += new System.EventHandler(this.Find_Click);
-            // 
-            // Replace_ToolStripButton
-            // 
-            this.Replace_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Replace_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Replace_ToolStripButton.Image")));
-            this.Replace_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Replace_ToolStripButton.Name = "Replace_ToolStripButton";
-            this.Replace_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Replace_ToolStripButton.Text = "toolStripButton12";
-            this.Replace_ToolStripButton.Click += new System.EventHandler(this.Replace_Click);
-            // 
-            // Coppy_ToolStripButton
-            // 
-            this.Coppy_ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Coppy_ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("Coppy_ToolStripButton.Image")));
-            this.Coppy_ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Coppy_ToolStripButton.Name = "Coppy_ToolStripButton";
-            this.Coppy_ToolStripButton.Size = new System.Drawing.Size(34, 24);
-            this.Coppy_ToolStripButton.Text = "toolStripButton1";
-            this.Coppy_ToolStripButton.Click += new System.EventHandler(this.Coppy_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(305, 6);
-            // 
-            // vewToolStripMenuItem
-            // 
-            this.vewToolStripMenuItem.Name = "vewToolStripMenuItem";
-            this.vewToolStripMenuItem.Size = new System.Drawing.Size(308, 34);
-            this.vewToolStripMenuItem.Text = "Zoom";
             // 
             // Form1
             // 
@@ -706,7 +708,7 @@ namespace Nodepad
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ReplaceToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toggleFullScreenModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postitToolStripMenuItem;
