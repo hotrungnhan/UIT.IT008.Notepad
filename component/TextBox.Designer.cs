@@ -1,4 +1,7 @@
-﻿namespace Nodepad.component
+﻿using System.Windows.Controls;
+using System.Windows.Forms;
+
+namespace Nodepad.component
 {
     partial class TextBox
     {
@@ -34,13 +37,12 @@
             // 
             // mainbox
             // 
-            this.mainbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainbox.Location = new System.Drawing.Point(72, 0);
+            this.mainbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainbox.Location = new System.Drawing.Point(61, 0);
             this.mainbox.Name = "mainbox";
-            this.mainbox.Size = new System.Drawing.Size(1010, 621);
-            this.mainbox.TabIndex = 2;
+            this.mainbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.mainbox.Size = new System.Drawing.Size(427, 305);
+            this.mainbox.TabIndex = 1;
             this.mainbox.Text = "";
             this.mainbox.TextChanged += new System.EventHandler(this.TextColorUp);
             // 
@@ -50,25 +52,26 @@
             this.linebox.Enabled = false;
             this.linebox.Location = new System.Drawing.Point(0, 0);
             this.linebox.Name = "linebox";
-            this.linebox.Size = new System.Drawing.Size(72, 621);
+            this.linebox.Size = new System.Drawing.Size(61, 305);
             this.linebox.TabIndex = 1;
             this.linebox.Text = "";
+            this.linebox.WordWrap = false;
             // 
             // TextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.linebox);
             this.Controls.Add(this.mainbox);
+            this.Controls.Add(this.linebox);
             this.Name = "TextBox";
-            this.Size = new System.Drawing.Size(1082, 621);
+            this.Size = new System.Drawing.Size(488, 305);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox mainbox;
+        public System.Windows.Forms.RichTextBox mainbox;
         private System.Windows.Forms.RichTextBox linebox;
     }
 }

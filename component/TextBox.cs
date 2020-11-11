@@ -27,7 +27,7 @@ namespace Nodepad.component
             FileURL = "";
             State = FileState.unsave;
             //SETUP LAYOUT
-            this.Dock = DockStyle.Fill;
+
         }
         public void SaveAsFile()
         {
@@ -153,7 +153,8 @@ namespace Nodepad.component
         }
         public void Paste()
         {
-            this.mainbox.AppendText(Clipboard.GetText(TextDataFormat.UnicodeText));
+            //this.mainbox.AppendText(Clipboard.GetText(TextDataFormat.UnicodeText));
+            this.mainbox.Paste();
         }
 
     }

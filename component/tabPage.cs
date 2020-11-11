@@ -14,8 +14,9 @@ namespace Nodepad.component
         {
             var Textbox = new TextBox();
             Textbox.Name = "textbox";
-            this.Controls.Add(new TextBox());
+            this.Controls.Add(Textbox);
             //layout
+            Textbox.Dock = DockStyle.Fill;
         }
 
     }

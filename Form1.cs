@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Nodepad.component;
 using Nodepad.component.Enum;
+using System.IO;
 
 namespace Nodepad
 {
@@ -43,7 +44,7 @@ namespace Nodepad
         private void new_BTN(object sender, EventArgs e)
         {
             var tab = new codeTab();
-            tab.Text = $"new draft ({tabControl1.TabPages.Count})";
+            tab.Text = $"New draft ({tabControl1.TabPages.Count})";
             tabControl1.Controls.Add(tab);
         }
 
@@ -101,6 +102,113 @@ namespace Nodepad
                 //Check the current items
                 currentItem.Checked = true;
             }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textBox.mainbox.Undo();
+        }
+
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textBox.mainbox.Redo();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+
+            textBox.mainbox.SelectedText = "";
+        }
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.Copy();
+            textbox.mainbox.SelectedText = "";
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            SaveTextFile_Click(sender, e);
+        }
+        #region ToolstripButton
+        private void New_Click(object sender, EventArgs e)
+        {
+            new_BTN(sender, e);
+        }
+
+        private void Open_Click(object sender, EventArgs e)
+        {
+            LoadTextFile_Click(sender, e);
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            SaveTextFile_Click(sender, e);
+        }
+
+        private void Undo_Click(object sender, EventArgs e)
+        {
+            undoToolStripMenuItem_Click(sender, e);
+        }
+
+        private void Cut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Paste_Click_1(object sender, EventArgs e)
+        {
+            Paste_click(sender, e);
+        }
+
+        private void Find_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Replace_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Coppy_Click(object sender, EventArgs e)
+        {
+            Coppy_Click(sender, e);
+        }
+
+        #endregion
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
