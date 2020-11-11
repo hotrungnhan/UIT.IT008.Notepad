@@ -9,14 +9,3 @@ C:\Users\Kudou Sterain\source\repos\Nodepad+=\obj\Debug\Nodepad+=.csproj.Generat
 C:\Users\Kudou Sterain\source\repos\Nodepad+=\obj\Debug\Nodepad+=.csproj.CoreCompileInputs.cache
 C:\Users\Kudou Sterain\source\repos\Nodepad+=\obj\Debug\nodepadC++.exe
 C:\Users\Kudou Sterain\source\repos\Nodepad+=\obj\Debug\nodepadC++.pdb
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\bin\Debug\nodepadC++.exe.config
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\bin\Debug\nodepadC++.exe
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\bin\Debug\nodepadC++.pdb
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad+=.csprojAssemblyReference.cache
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad.component.TextBox.resources
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad.Form1.resources
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad.Properties.Resources.resources
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad+=.csproj.GenerateResource.cache
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\Nodepad+=.csproj.CoreCompileInputs.cache
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\nodepadC++.exe
-C:\Users\Kudou Sterain\Source\Repos\hotrungnhan\NodePad-Rebuilt\obj\Debug\nodepadC++.pdb
