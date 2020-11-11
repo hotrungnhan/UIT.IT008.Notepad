@@ -111,7 +111,7 @@ namespace Nodepad
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,17 +120,6 @@ namespace Nodepad
             textBox.mainbox.Undo();
         }
 
-        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
-            using (Re rename  = new Re())
-            {
-                if(rename.ShowDialog() == DialogResult.OK)
-                this.tabControl1.SelectedTab.Text = rename.URL;
-            }
-            
-
-        }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -152,7 +141,7 @@ namespace Nodepad
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            SaveTextFile_Click(sender,e);
+            SaveTextFile_Click(sender, e);
         }
         #region ToolstripButton
         private void New_Click(object sender, EventArgs e)
