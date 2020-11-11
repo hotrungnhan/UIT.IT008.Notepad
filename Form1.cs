@@ -43,7 +43,7 @@ namespace Nodepad
         private void new_BTN(object sender, EventArgs e)
         {
             var tab = new codeTab();
-            tab.Text = $"New draft ({tabControl1.TabPages.Count})";
+            tab.Text = $"new draft ({tabControl1.TabPages.Count})";
             tabControl1.Controls.Add(tab);
         }
 
@@ -101,16 +101,6 @@ namespace Nodepad
                 //Check the current items
                 currentItem.Checked = true;
             }
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
