@@ -227,14 +227,17 @@ namespace Nodepad
                 {
                     int lengt_text = textbox.mainbox.Text.Length;
                     int start = 0;
+                    int index = 0;
                     string text = find.Find_Text;
                     int length = text.Length;
                     while (start < lengt_text)
                     {
-                         int index = textbox.mainbox.Text.IndexOf(text,start);
-                         start = start + length + index;
+                         index = textbox.mainbox.Text.IndexOf(text,start);
+                        if (index == -1) break;
                          textbox.mainbox.Select(index, length);
                          textbox.mainbox.SelectionColor = Color.Red;
+                         start = 0;
+                         start = start + length + index;
                     };
                 }
             }

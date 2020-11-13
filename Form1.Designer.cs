@@ -577,7 +577,7 @@ namespace Nodepad
             // 
             this.findToolStripMenuItem1.Name = "findToolStripMenuItem1";
             this.findToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.findToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.findToolStripMenuItem1.Size = new System.Drawing.Size(238, 34);
             this.findToolStripMenuItem1.Text = "Find...";
             this.findToolStripMenuItem1.Click += new System.EventHandler(this.findToolStripMenuItem1_Click);
             // 
@@ -585,7 +585,7 @@ namespace Nodepad
             // 
             this.ReplaceToolStripMenuItem2.Name = "ReplaceToolStripMenuItem2";
             this.ReplaceToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.ReplaceToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.ReplaceToolStripMenuItem2.Size = new System.Drawing.Size(238, 34);
             this.ReplaceToolStripMenuItem2.Text = "Replace";
             this.ReplaceToolStripMenuItem2.Click += new System.EventHandler(this.findToolStripMenuItem2_Click);
             // 
@@ -627,7 +627,7 @@ namespace Nodepad
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1192, 573);
+            this.textBox1.Size = new System.Drawing.Size(1192, 565);
             this.textBox1.State = Nodepad.component.Enum.FileState.unsave;
             this.textBox1.TabIndex = 0;
             // 
@@ -636,10 +636,10 @@ namespace Nodepad
             this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Location = new System.Drawing.Point(0, 573);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 565);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(1192, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1192, 32);
             this.menuStrip2.TabIndex = 1;
             // 
             // Form1
