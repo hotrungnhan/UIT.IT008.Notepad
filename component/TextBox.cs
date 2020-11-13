@@ -27,7 +27,7 @@ namespace Nodepad.component
             FileURL = "";
             State = FileState.unsave;
             //SETUP LAYOUT
-            this.Dock = DockStyle.Fill;
+
         }
         public void SaveAsFile()
         {
@@ -133,29 +133,19 @@ namespace Nodepad.component
 
             }
         }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Control | Keys.C))
-            {
-                Copy();
-                return true;
-            }
-            if (keyData == (Keys.Control | Keys.V))
-            {
-                Paste();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
         public void Copy()
         {
             this.mainbox.Copy();
         }
         public void Paste()
         {
-            //this.mainbox.AppendText(Clipboard.GetText(TextDataFormat.UnicodeText));
-            this.mainbox.Paste();
-        }
 
+            DataFormats.Format myFormat = DataFormats.GetFormat(DataFormats.Text);
+            mainbox.Paste(myFormat);
+        }
+        public void SelectAll()
+        {
+            this.mainbox.SelectAll();
+        }
     }
 }

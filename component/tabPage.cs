@@ -13,10 +13,10 @@ namespace Nodepad.component
         public codeTab()
         {
             var Textbox = new TextBox();
-            
             Textbox.Name = "textbox";
             this.Controls.Add(Textbox);
             //layout
+            Textbox.Dock = DockStyle.Fill;
         }
 
     }
