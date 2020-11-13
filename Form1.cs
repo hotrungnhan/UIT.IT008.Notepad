@@ -53,7 +53,7 @@ namespace Nodepad
         }
         //------------------------------------------------------------------------------------------
         // Phan chuc nang thuc dung ne !
-        //File ne
+        #region File_ne
         //Save file ne
         private void SaveTextFile_Click(object sender, EventArgs e)
         {
@@ -90,6 +90,7 @@ namespace Nodepad
         {
             System.Windows.Forms.Application.Exit();
         }
+        #endregion File_ne
         // Cha bik la j ne
         private void KeyDownpaste(object sender, KeyEventArgs e)
         {
@@ -114,7 +115,7 @@ namespace Nodepad
 
         }
         //------------------------------------------------------------------------------
-        //EDIT ne
+        #region EDIT_NE
         // Cut ne
         private void Cut_click(object sender, EventArgs e)
         {
@@ -160,7 +161,7 @@ namespace Nodepad
             var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
             textBox.SelectAllTextInMainBox();
         }
-
+        #endregion EDIT_NE
         //Khong bik la j nhung xoa di se error nhe
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
