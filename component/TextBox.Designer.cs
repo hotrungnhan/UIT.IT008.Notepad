@@ -38,12 +38,14 @@ namespace Nodepad.component
             // mainbox
             // 
             this.mainbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainbox.EnableAutoDragDrop = true;
             this.mainbox.Location = new System.Drawing.Point(61, 0);
             this.mainbox.Name = "mainbox";
             this.mainbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.mainbox.Size = new System.Drawing.Size(427, 305);
             this.mainbox.TabIndex = 1;
             this.mainbox.Text = "";
+            this.mainbox.WordWrap = false;
             this.mainbox.TextChanged += new System.EventHandler(this.TextColorUp);
             // 
             // linebox
