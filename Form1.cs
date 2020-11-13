@@ -51,10 +51,19 @@ namespace Nodepad
                 currentItem.Checked = true;
             }
         }
+        //public void SaveFlagHandler()
+        //{
+        //    var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+        //    if (textbox.GetMainBox().Text != textbox.GetOriginalText())
+        //        textbox.State = FileState.unsave;
+        //    else
+        //        textbox.State = FileState.save;
+        //}
         //------------------------------------------------------------------------------------------
         // Phan chuc nang thuc dung ne !
         #region File_ne
         //Save file ne
+
         private void SaveTextFile_Click(object sender, EventArgs e)
         {
             var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
@@ -65,6 +74,8 @@ namespace Nodepad
         {
             var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
             textbox.LoadFile();
+            //Luu trang thai ban dau cua file dc load
+            textbox.SetOriginalText(textbox.GetMainBox().Text);
         }
         // New tab ne
         private void new_BTN(object sender, EventArgs e)
@@ -88,7 +99,9 @@ namespace Nodepad
         //exit ne
         private void exit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            if (tabControl1.TabCount > 0)
+                CloseAll_Click(sender, e);
+            this.Close();
         }
         #endregion File_ne
         // Cha bik la j ne
@@ -178,20 +191,38 @@ namespace Nodepad
 
         private void Close_Click(object sender, EventArgs e)
         {
-
-            if (tabControl1.TabCount != 1)
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.SaveFlagHandler();
+            if (textbox.State == FileState.unsave)
             {
-                tabControl1.SelectedTab.Dispose();
-                tabControl1.SelectTab(tabControl1.TabCount - 1);
+                if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
+                                                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    SaveTextFile_Click(sender, e);
+                else
+                    if (tabControl1.TabCount > 1)
+                    {
+                        tabControl1.SelectedTab.Dispose();
+                        tabControl1.SelectTab(tabControl1.TabCount - 1);
+                    }
+                    else
+                        this.tabControl1.TabPages.Clear();
             }
             else
-                exit_Click(sender, e);
+            {
+                if (tabControl1.TabCount > 1)
+                {
+                    tabControl1.SelectedTab.Dispose();
+                    tabControl1.SelectTab(tabControl1.TabCount - 1);
+                }
+                else
+                    this.tabControl1.TabPages.Clear();
+            }
         }
 
         private void CloseAll_Click(object sender, EventArgs e)
         {
-            tabControl1.Dispose();
-            new_BTN(sender, e);
+            while (tabControl1.TabCount > 0)
+                Close_Click(sender, e);
         }
 
         private void Find_Click(object sender, EventArgs e)
@@ -203,7 +234,10 @@ namespace Nodepad
         {
 
         }
-
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            exit_Click(sender, e);
+        }
 
         #endregion
     }

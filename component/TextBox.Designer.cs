@@ -64,16 +64,26 @@
             this.Size = new System.Drawing.Size(1082, 621);
             this.ResumeLayout(false);
 
+            OriginalText = "";
         }
 
         #endregion
 
         private System.Windows.Forms.RichTextBox mainbox;
         private System.Windows.Forms.RichTextBox linebox;
+        private string OriginalText;
 
         public System.Windows.Forms.RichTextBox GetMainBox()
         {
             return mainbox;
+        }
+        public void SetOriginalText(string LoadText)
+        {
+            OriginalText = LoadText;
+        }
+        public string GetOriginalText()
+        {
+            return OriginalText;
         }
         public void SelectAllTextInMainBox()
         {
@@ -107,5 +117,8 @@
         {
             this.mainbox.Redo();
         }
+
+        //save
+
     }
 }
