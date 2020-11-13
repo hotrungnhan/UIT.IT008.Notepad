@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using Nodepad.component;
 using Nodepad.component.Enum;
 using System.IO;
+using System.Diagnostics;
 
 namespace Nodepad
 {
@@ -197,6 +198,40 @@ namespace Nodepad
         {
             var textbox = FindTextBox(this.tabControl1.SelectedTab);
             textbox.SelectAll();
+        private void findToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox(this.tabControl1.SelectedTab);
+            using (Find find =new Find())
+            {
+                if(find.ShowDialog() == DialogResult.OK)
+                {
+                    int lengt_text = textbox.mainbox.Text.Length;
+                    int start = 0;
+                    string text = find.Find_Text;
+                    int length = text.Length;
+                    while (start < lengt_text)
+                    {
+                         int index = textbox.mainbox.Text.IndexOf(text,start);
+                         start = start + length + index;
+                         textbox.mainbox.Select(index, length);
+                         textbox.mainbox.SelectionColor = Color.Red;
+                    };
+                }
+            }
+            
+        }
+
+        private void findToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox(this.tabControl1.SelectedTab);
+            
+            using (Find find = new Find())
+            {
+                if (find.ShowDialog() == DialogResult.OK)
+                {
+                    textbox.mainbox.Text = textbox.mainbox.Text.Replace(find.Find_Text, find.Replace_Text);
+                }    
+            }
         }
     }
 }
