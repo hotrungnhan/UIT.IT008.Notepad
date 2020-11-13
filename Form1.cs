@@ -12,7 +12,6 @@ using System.Text.RegularExpressions;
 using Nodepad.component;
 using Nodepad.component.Enum;
 using System.IO;
-using System.Diagnostics;
 
 namespace Nodepad
 {
@@ -22,7 +21,7 @@ namespace Nodepad
         {
             InitializeComponent();
         }
-        private Nodepad.component.TextBox FindTextBox(TabPage tab)
+        private Nodepad.component.TextBox FindTextBox(codeTab tab)
         {
             var firstitem = tab.Controls.Find("textbox", true).FirstOrDefault();
             if (firstitem is Nodepad.component.TextBox)
@@ -32,40 +31,7 @@ namespace Nodepad
             }
             return null;
         }
-        #region menuTripEventHandle
-        private void SaveTextFile_Click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.SaveFile();
-        }
-        private void LoadTextFile_Click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.LoadFile();
-        }
-        private void Newtab_Click(object sender, EventArgs e)
-        {
-            var tab = new codeTab();
-            tab.Text = $"New draft ({tabControl1.TabPages.Count})";
-            tabControl1.Controls.Add(tab);
-        }
-        #endregion ToolstripButton
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void Copy_click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.Copy();
-        }
-        private void Paste_click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.Paste();
-        }
-
+        //??? nhung co ve huu dung
         private void SubMenu_Click(object sender, EventArgs e)
         {
             var currentItem = sender as ToolStripMenuItem;
@@ -78,68 +44,131 @@ namespace Nodepad
                         item.Checked = false;
                     });
                 // set tab Lang item;
-                var currenttab = FindTextBox(this.tabControl1.SelectedTab);
+                var currenttab = FindTextBox((codeTab)this.tabControl1.SelectedTab);
                 //Console.WriteLine((currentItem.Tag).ToString());
                 currenttab.Lang = LangFunc.getCodeByExtension((currentItem.Tag).ToString());
                 //Check the current items
                 currentItem.Checked = true;
             }
         }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        //------------------------------------------------------------------------------------------
+        // Phan chuc nang thuc dung ne !
+        //File ne
+        //Save file ne
+        private void SaveTextFile_Click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.SaveFile();
+        }
+        //Load file ne
+        private void LoadTextFile_Click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.LoadFile();
+        }
+        // New tab ne
+        private void new_BTN(object sender, EventArgs e)
+        {
+            var tab = new codeTab();
+            tab.Text = $"New draft ({tabControl1.TabPages.Count})";
+            tabControl1.Controls.Add(tab);
+            //chung current sang tab moi tao
+            tabControl1.SelectedTab = tab;
+
+        }
+        //New win ne
+        private void OpenNewNodepad(object sender, EventArgs e)
+        {
+            Form1 NewNote = new Form1();
+            int Index = System.Windows.Forms.Application.OpenForms.Count;
+
+            NewNote.Text = "NewNodepad (" + Index.ToString() + ")";
+            NewNote.Show();
+        }
+        //exit ne
+        private void exit_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        // Cha bik la j ne
+        private void KeyDownpaste(object sender, KeyEventArgs e)
+        {
+
+            //if (e.Control && e.KeyCode == Keys.V)
+            //{
+            //    richTextBox1.Text += (string)Clipboard.GetData("Text");
+            //    e.Handled = true;
+            //    Console.WriteLine("paste");
+            //}
+            //var a = $"{e.Control}";
+            //Console.WriteLine(a);
+            //if (e.Control && e.KeyCode == Keys.C)
+            //{
+            //    Console.WriteLine("copy");
+            //    Clipboard.SetText(richTextBox1.SelectedText);
+            //    e.Handled = true;
+            //}
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
-
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        //------------------------------------------------------------------------------
+        //EDIT ne
+        // Cut ne
+        private void Cut_click(object sender, EventArgs e)
         {
-            var textBox = FindTextBox(this.tabControl1.SelectedTab);
-            textBox.mainbox.Undo();
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            //Xem ham dan trong Textbox.design.cs nhe 
+            //Chu dich de mainbox private nen tui viet dam ba ham o trong do
+            textbox.CutSelectedTextInMainBox();
         }
-        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        //Copy ne
+        private void Copy_click(object sender, EventArgs e)
         {
-            var textBox = FindTextBox(this.tabControl1.SelectedTab);
-            textBox.mainbox.Redo();
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.Copy();
         }
-
+        //Paste ne
+        private void Paste_click(object sender, EventArgs e)
+        {
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textbox.Paste();
+        }
+        //Undo ne
+        private void undo_Click(object sender, EventArgs e)
+        {
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textBox.UndoMainBox();
+        }
+        //Redo ne
+        private void redo_Click(object sender, EventArgs e)
+        {
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textBox.RedoMainBox();
+        }
+        //delete ne
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var textBox = FindTextBox(this.tabControl1.SelectedTab);
-            textBox.mainbox.SelectedText = "";
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+
+            textBox.DeleteSelectedTextInMainBox();
         }
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        //Select All ne
+        private void SelectAll_Click(object sender, EventArgs e)
         {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.mainbox.SelectedText = "";
+            var textBox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            textBox.SelectAllTextInMainBox();
         }
-        private void toolStripButton1_Click(object sender, EventArgs e)
+
+        //Khong bik la j nhung xoa di se error nhe
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SaveTextFile_Click(sender, e);
+
         }
+
+        //Viet tiep ne
         #region ToolstripButton
-        private void New_Click(object sender, EventArgs e)
-        {
-            Newtab_Click(sender, e);
-        }
-
-        private void Open_Click(object sender, EventArgs e)
-        {
-            LoadTextFile_Click(sender, e);
-        }
-
-        private void Save_Click(object sender, EventArgs e)
-        {
-            SaveTextFile_Click(sender, e);
-        }
-
-        private void Undo_Click(object sender, EventArgs e)
-        {
-            undoToolStripMenuItem_Click(sender, e);
-        }
-
-        private void Cut_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Print_Click(object sender, EventArgs e)
         {
@@ -149,16 +178,19 @@ namespace Nodepad
         private void Close_Click(object sender, EventArgs e)
         {
 
+            if (tabControl1.TabCount != 1)
+            {
+                tabControl1.SelectedTab.Dispose();
+                tabControl1.SelectTab(tabControl1.TabCount - 1);
+            }
+            else
+                exit_Click(sender, e);
         }
 
         private void CloseAll_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Paste_Click_1(object sender, EventArgs e)
-        {
-            Paste_click(sender, e);
+            tabControl1.Dispose();
+            new_BTN(sender, e);
         }
 
         private void Find_Click(object sender, EventArgs e)
@@ -171,68 +203,7 @@ namespace Nodepad
 
         }
 
-        private void Coppy_Click(object sender, EventArgs e)
-        {
-            Coppy_Click(sender, e);
-        }
 
         #endregion
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.SaveAsFile();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SelectAll_OnClick(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            textbox.SelectAll();
-        }
-        private void findToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-            using (Find find = new Find())
-            {
-                if (find.ShowDialog() == DialogResult.OK)
-                {
-                    int lengt_text = textbox.mainbox.Text.Length;
-                    int start = 0;
-                    string text = find.Find_Text;
-                    int length = text.Length;
-                    while (start < lengt_text)
-                    {
-                        int index = textbox.mainbox.Text.IndexOf(text, start);
-                        start = start + length + index;
-                        textbox.mainbox.Select(index, length);
-                        textbox.mainbox.SelectionColor = Color.Red;
-                    };
-                }
-            }
-
-        }
-
-        private void findToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            var textbox = FindTextBox(this.tabControl1.SelectedTab);
-
-            using (Find find = new Find())
-            {
-                if (find.ShowDialog() == DialogResult.OK)
-                {
-                    textbox.mainbox.Text = textbox.mainbox.Text.Replace(find.Find_Text, find.Replace_Text);
-                }
-            }
-        }
     }
 }
