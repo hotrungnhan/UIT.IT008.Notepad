@@ -38,6 +38,7 @@ namespace Nodepad.component
             saveDialog.FilterIndex = (int)Lang + 1; // filter index bat dau tu 1, enum bat dau tu 0;
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
+                State = FileState.save;
                 this.FileURL = saveDialog.FileName;
                 try
                 {
@@ -52,6 +53,8 @@ namespace Nodepad.component
 
                 Lang = LangFunc.getCodeByExtension(Path.GetExtension(this.FileURL));
             }
+            else
+                State = FileState.unsave;
         }
 
         public void SaveFile()
@@ -59,6 +62,7 @@ namespace Nodepad.component
             if (!String.IsNullOrEmpty(FileURL))
             {
                 this.mainbox.SaveFile(FileURL, RichTextBoxStreamType.UnicodePlainText);
+                State = FileState.save;
             }
             else
             {
@@ -146,6 +150,13 @@ namespace Nodepad.component
         public void SelectAll()
         {
             this.mainbox.SelectAll();
+        }
+        public void SaveFlagHandler()
+        {
+            if (mainbox.Text != OriginalText)
+                this.State = FileState.unsave;
+            else
+                this.State = FileState.save;
         }
     }
 }
