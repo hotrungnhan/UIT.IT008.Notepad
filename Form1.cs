@@ -29,6 +29,7 @@ namespace Nodepad
                 var textbox = (Nodepad.component.TextBox)firstitem;
                 return textbox;
             }
+            
             return null;
         }
         //??? nhung co ve huu dung
@@ -99,9 +100,10 @@ namespace Nodepad
         //exit ne
         private void exit_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabCount > 0)
-                CloseAll_Click(sender, e);
-            this.Close();
+
+            while (tabControl1.TabCount > 0)
+                Close_Click(sender, e);
+            Application.Exit();
         }
         #endregion File_ne
         // Cha bik la j ne
@@ -175,11 +177,8 @@ namespace Nodepad
             textBox.SelectAllTextInMainBox();
         }
         #endregion EDIT_NE
-        //Khong bik la j nhung xoa di se error nhe
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
+
 
         //Viet tiep ne
         #region ToolstripButton
@@ -227,7 +226,25 @@ namespace Nodepad
 
         private void Find_Click(object sender, EventArgs e)
         {
-
+            var textbox = FindTextBox((codeTab)this.tabControl1.SelectedTab);
+            
+            using (Find find = new Find())
+            {
+                if (find.ShowDialog() == DialogResult.OK)
+                {
+                    int start = 0;
+                    int index = 0;
+                    string textfind = find.Find_Text;
+                    int lengthfind = find.Find_Text.Length;
+                    int lengthText = textbox.GetLength();
+                    while (start < lengthText)
+                    {
+                        index = textbox.GetMainBox().Text.IndexOf(textfind, start);
+                        if (index == -1) break;
+                        
+                    }
+                }
+            }
         }
 
         private void Replace_Click(object sender, EventArgs e)

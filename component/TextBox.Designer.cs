@@ -73,6 +73,7 @@
         private System.Windows.Forms.RichTextBox linebox;
         private string OriginalText;
 
+        public  System.Windows.Forms.RichTextBox _mainbox;
         public System.Windows.Forms.RichTextBox GetMainBox()
         {
             return mainbox;
@@ -112,6 +113,10 @@
         public void UndoMainBox()
         {
             this.mainbox.Undo();
+        }
+        public int GetLength()
+        {
+            return mainbox.Text.Length;
         }
         public void RedoMainBox()
         {

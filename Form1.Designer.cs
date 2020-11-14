@@ -587,14 +587,15 @@ namespace Nodepad
             // 
             this.findToolStripMenuItem1.Name = "findToolStripMenuItem1";
             this.findToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.findToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.findToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.findToolStripMenuItem1.Text = "Find...";
+            
             // 
             // findToolStripMenuItem2
             // 
             this.findToolStripMenuItem2.Name = "findToolStripMenuItem2";
             this.findToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.findToolStripMenuItem2.Size = new System.Drawing.Size(158, 22);
+            this.findToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.findToolStripMenuItem2.Text = "Replace";
             // 
             // countWordToolStripMenuItem
@@ -613,7 +614,6 @@ namespace Nodepad
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 399);
             this.tabControl1.TabIndex = 3;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -660,7 +660,7 @@ namespace Nodepad
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "Nodepad+=";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
