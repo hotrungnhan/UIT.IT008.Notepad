@@ -213,9 +213,10 @@ namespace Nodepad
                     while (start < lengt_text)
                     {
                         int index = textbox.mainbox.Text.IndexOf(text, start);
-                        start = start + length + index;
+                        if (index == -1) break; 
+                        start = length + index;
                         textbox.mainbox.Select(index, length);
-                        textbox.mainbox.SelectionColor = Color.Red;
+                        textbox.mainbox.SelectionColor = Color.Blue;
                     };
                 }
             }
@@ -238,6 +239,62 @@ namespace Nodepad
         private void tabPage1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
+
+        private void toggleFullScreenModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!TopMost == true)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+                TopMost = true;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                TopMost = false;
+            }
+        }
+
+        private void postitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (!TopMost == true)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                toolStrip1.Visible = false;
+                TopMost = true;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                toolStrip1.Visible = true;
+                TopMost = false;
+            }
+        }
+
+        private void ZoomIn_vewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textbox = this.FindTextBox(this.tabControl1.SelectedTab);
+            float currentSize = textbox.mainbox.Font.Size;
+            currentSize += 2.0F;
+            textbox.mainbox.Font = new Font(textbox.mainbox.Font.Name, currentSize, 
+                textbox.mainbox.Font.Style, textbox.mainbox.Font.Unit);
+        }
+
+        private void Zoomout_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var textbox = this.FindTextBox(this.tabControl1.SelectedTab);
+            float currentSize = textbox.mainbox.Font.Size;
+            currentSize -= 2.0F;
+            textbox.mainbox.Font = new Font(textbox.mainbox.Font.Name, currentSize,
+                textbox.mainbox.Font.Style, textbox.mainbox.Font.Unit);
         }
     }
 }
