@@ -22,6 +22,13 @@ namespace Nodepad
         {
             InitializeComponent();
         }
+        private enum CurrentView
+        {
+            Max,
+            Normal,
+            PostIt
+        }
+        private CurrentView View = CurrentView.Normal;
         private Nodepad.component.TextBox FindTextBox(TabPage tab)
         {
             var firstitem = tab.Controls.Find("textbox", true).FirstOrDefault();
@@ -52,7 +59,7 @@ namespace Nodepad
         #endregion ToolstripButton
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            var textbox = FindTextBox(this.tabControl1.SelectedTab);
         }
 
         private void Copy_click(object sender, EventArgs e)
@@ -248,35 +255,19 @@ namespace Nodepad
 
         private void toggleFullScreenModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!TopMost == true)
-            {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
-                TopMost = true;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
-                TopMost = false;
-            }
+             FormBorderStyle = FormBorderStyle.None;
+             WindowState = FormWindowState.Maximized;
+             TopMost = true;
+             View = CurrentView.Max;
         }
 
         private void postitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (!TopMost == true)
-            {
                 FormBorderStyle = FormBorderStyle.None;
                 toolStrip1.Visible = false;
+                menuStrip1.Visible = false;
                 TopMost = true;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                toolStrip1.Visible = true;
-                TopMost = false;
-            }
+                View = CurrentView.PostIt;
         }
 
         private void ZoomIn_vewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -295,6 +286,59 @@ namespace Nodepad
             currentSize -= 2.0F;
             textbox.mainbox.Font = new Font(textbox.mainbox.Font.Name, currentSize,
                 textbox.mainbox.Font.Style, textbox.mainbox.Font.Unit);
+            MessageBox.Show(textbox.FileURL.ToString());
+            
+        }
+
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape && View == CurrentView.Max) 
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                TopMost = false;
+                View = CurrentView.Normal;
+            }
+            else if (e.KeyCode == Keys.Escape && View == CurrentView.PostIt)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                toolStrip1.Visible = true;
+                menuStrip1.Visible = true; ;
+                TopMost = false;
+                View = CurrentView.Normal;
+            }
+        }
+
+        //Line Number
+        int linecount = 0;
+        private void tabControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) || e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                int tmp = linecount;
+                var textbox = this.FindTextBox(this.tabControl1.SelectedTab);
+                linecount = textbox.mainbox.Lines.Count();
+                if (linecount > tmp && linecount > 1)
+                {
+                    textbox.linebox.Text += "\n" + linecount.ToString();
+                }
+                else if (linecount < tmp && tmp > 1 )
+                {
+                    textbox.linebox.Lines = textbox.linebox.Lines.Take(textbox.linebox.Lines.Length - 1).ToArray();
+                }
+
+            }
+           
+
+
         }
     }
 }
+
+
+
+
+
+
+
